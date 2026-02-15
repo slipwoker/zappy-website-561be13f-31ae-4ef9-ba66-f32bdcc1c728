@@ -30,6 +30,286 @@
     <script src="https://cdn.jsdelivr.net/npm/vanilla-cookieconsent@3/dist/cookieconsent.umd.js"></script>
     <!-- Mickidum Accessibility Toolbar -->
     <script src="https://cdn.jsdelivr.net/gh/mickidum/acc_toolbar/acctoolbar/acctoolbar.min.js"></script>
+
+<style data-zappy-section-v2-css="true">
+/* V2 Regenerated Section CSS */
+.home-faq-section {
+  position: relative;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  padding: 80px 16px;
+  overflow: visible;
+}
+
+.home-faq-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.home-faq-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.home-faq-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+}
+
+.home-faq-intro {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.home-faq-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 60px;
+}
+
+.home-faq-item {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(47, 42, 36, 0.08);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.home-faq-item:hover {
+  box-shadow: 0 8px 20px rgba(47, 42, 36, 0.12);
+  transform: translateY(-2px);
+}
+
+.home-faq-question {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  cursor: pointer;
+  position: relative;
+}
+
+.home-faq-icon-wrapper {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  border-radius: 8px;
+  color: var(--text-light);
+  box-shadow: 0 4px 12px rgba(198, 90, 61, 0.25);
+}
+
+.home-faq-icon-wrapper svg {
+  width: 24px;
+  height: 24px;
+}
+
+.home-faq-question h3 {
+  flex: 1;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.home-faq-toggle {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--border-light);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-dark);
+}
+
+.home-faq-toggle:hover {
+  background: var(--bg-light);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.home-faq-toggle svg {
+  transition: transform 0.3s ease;
+}
+
+.home-faq-item[data-faq-open='true'] .home-faq-toggle svg {
+  transform: rotate(180deg);
+}
+
+.home-faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding: 0 24px;
+}
+
+.home-faq-item[data-faq-open='true'] .home-faq-answer {
+  max-height: 500px;
+  padding: 0 24px 24px 80px;
+}
+
+.home-faq-answer p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.home-faq-cta-card {
+  background: linear-gradient(135deg, var(--secondary) 0%, #556B3D 100%);
+  color: var(--text-light);
+  border-radius: 12px;
+  padding: 40px 32px;
+  text-align: center;
+  box-shadow: 0 12px 28px rgba(102, 122, 75, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.home-faq-cta-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.home-faq-cta-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text-light);
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.home-faq-cta-card p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-light);
+  margin-bottom: 24px;
+  opacity: 0.95;
+  position: relative;
+  z-index: 1;
+}
+
+.home-faq-cta-card .btn-whatsapp {
+  background: #6E7F3E;
+  color: #FFFFFF;
+  padding: 14px 28px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+  box-shadow: 0 8px 18px rgba(47, 42, 36, 0.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.home-faq-cta-card .btn-whatsapp:hover {
+  background: #7A8F45;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(47, 42, 36, 0.3);
+}
+
+.home-faq-cta-card .btn-whatsapp svg {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 768px) {
+  .home-faq-section {
+    padding: 60px 16px;
+  }
+
+  .home-faq-header {
+    margin-bottom: 40px;
+  }
+
+  .home-faq-header h2 {
+    font-size: 26px;
+  }
+
+  .home-faq-grid {
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+
+  .home-faq-question {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .home-faq-icon-wrapper {
+    width: 36px;
+    height: 36px;
+  }
+
+  .home-faq-icon-wrapper svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .home-faq-question h3 {
+    font-size: 16px;
+  }
+
+  .home-faq-toggle {
+    width: 28px;
+    height: 28px;
+  }
+
+  .home-faq-item[data-faq-open='true'] .home-faq-answer {
+    padding: 0 16px 16px 64px;
+  }
+
+  .home-faq-answer p {
+    font-size: 15px;
+  }
+
+  .home-faq-cta-card {
+    padding: 32px 20px;
+    border-radius: 8px;
+  }
+
+  .home-faq-cta-card h3 {
+    font-size: 20px;
+  }
+
+  .home-faq-cta-card .btn-whatsapp {
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+}
+</style>
 <!-- Zappy Analytics -->
 <script>
 (function() {
@@ -491,126 +771,177 @@
   </div>
 </section>
 
-<section class="home-faq-section" data-layout-spec="בית-faq" id="zappy-section-4">
+<section class="home-faq-section" data-layout-spec="בית-faq" data-zappy-section="true">
   <div class="home-faq-container">
     <div class="home-faq-header">
       <h2>שאלות נפוצות, תשובות ברורות</h2>
-      <p style="">אם אתם קוראים את זה ברגע מלחיץ — התחילו משתי השאלות הראשונות.</p>
+      <p class="home-faq-intro">אם אתם קוראים את זה ברגע מלחיץ — התחילו משתי השאלות הראשונות.</p>
     </div>
 
-    <div class="home-faq-accordion zappy-vertical-grid" style="display: grid; --zappy-grid-cols: repeat(8, minmax(0, 1fr));">
-      <div class="home-faq-item" data-grid-item-index="0">
-        <button class="home-faq-question btn btn-primary" aria-expanded="false" data-element-type="button" data-element-id="btn-1771165792727-ttrn65tu2" data-native-element="true" style="outline: none; border-color: rgb(255, 255, 255) !important; color: var(--light-text, #ffffff) !important; background-color: rgb(255, 255, 255) !important; background-image: none !important;" data-text-color="light">
-          <span class="home-faq-question-text">מתי כדאי ליצור קשר עם שמאי רכוש?</span>
-          <svg class="home-faq-icon" aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="">
-            <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style=""></path>
-          </svg>
-        </button>
-        <div class="home-faq-answer" hidden="">
+    <div class="home-faq-grid">
+      <div class="home-faq-item" data-faq-index="0">
+        <div class="home-faq-question">
+          <div class="home-faq-icon-wrapper">
+            <svg data-element-type="icon" data-icon-type="svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="currentColor"></path>
+            </svg>
+          </div>
+          <h3>מתי כדאי ליצור קשר עם שמאי רכוש?</h3>
+          <button class="home-faq-toggle" aria-label="פתח תשובה">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="home-faq-answer">
           <p>רצוי ליצור קשר מיד לאחר גילוי הנזק, לפני תחילת תיקונים. שמאי רכוש מוסמך יכול לתעד את המצב הראשוני, להעריך את היקף הנזק בצורה מדויקת ולסייע בניהול התביעה מול חברת הביטוח. פנייה מוקדמת מונעת אי-הבנות ומאפשרת תהליך חלק יותר.</p>
         </div>
       </div>
 
-      <div class="home-faq-item" data-grid-item-index="1">
-        <button class="home-faq-question" aria-expanded="false" data-element-type="button" data-element-id="btn-1771165792727-2uapyfn21" data-native-element="true" style="outline: none;">
-          <span class="home-faq-question-text">מה אם כבר התחלתי לתקן?</span>
-          <svg class="home-faq-icon" aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </button>
-        <div class="home-faq-answer" hidden="">
+      <div class="home-faq-item" data-faq-index="1">
+        <div class="home-faq-question">
+          <div class="home-faq-icon-wrapper">
+            <svg data-element-type="icon" data-icon-type="svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19.43 12.98c.04-.32.07-.64.07-.98 0-.34-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.09-.16-.26-.25-.44-.25-.06 0-.12.01-.17.03l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.06-.02-.12-.03-.18-.03-.17 0-.34.09-.43.25l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98 0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.09.16.26.25.44.25.06 0 .12-.01.17-.03l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.06.02.12.03.18.03.17 0 .34-.09.43-.25l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zm-1.98-1.71c.04.31.05.52.05.73 0 .21-.02.43-.05.73l-.14 1.13.89.7 1.08.84-.7 1.21-1.27-.51-1.04-.42-.9.68c-.43.32-.84.56-1.25.73l-1.06.43-.16 1.13-.2 1.35h-1.4l-.19-1.35-.16-1.13-1.06-.43c-.43-.18-.83-.41-1.23-.71l-.91-.7-1.06.43-1.27.51-.7-1.21 1.08-.84.89-.7-.14-1.13c-.03-.31-.05-.54-.05-.74s.02-.43.05-.73l.14-1.13-.89-.7-1.08-.84.7-1.21 1.27.51 1.04.42.9-.68c.43-.32.84-.56 1.25-.73l1.06-.43.16-1.13.2-1.35h1.39l.19 1.35.16 1.13 1.06.43c.43.18.83.41 1.23.71l.91.7 1.06-.43 1.27-.51.7 1.21-1.07.85-.89.7.14 1.13zM12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z" fill="currentColor"></path>
+            </svg>
+          </div>
+          <h3>מה אם כבר התחלתי לתקן?</h3>
+          <button class="home-faq-toggle" aria-label="פתח תשובה">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="home-faq-answer">
           <p>זה לא אידיאלי, אבל עדיין אפשר לסייע. חשוב לשמור על כל התיעוד הקיים — תמונות, חשבוניות, הסכמים עם קבלנים. השמאי יבדוק את המצב הנוכחי, ינסה לשחזר את היקף הנזק המקורי ויעריך את העבודות שבוצעו. ככל שיש יותר תיעוד, כך הערכת הנזק תהיה מדויקת יותר.</p>
         </div>
       </div>
 
-      <div class="home-faq-item" data-grid-item-index="2">
-        <button class="home-faq-question" aria-expanded="false" data-element-type="button" data-element-id="btn-1771165792727-81icfduu0" data-native-element="true">
-          <span class="home-faq-question-text">האם אני צריך כמה הצעות מחיר?</span>
-          <svg class="home-faq-icon" aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </button>
-        <div class="home-faq-answer" hidden="">
+      <div class="home-faq-item" data-faq-index="2">
+        <div class="home-faq-question">
+          <div class="home-faq-icon-wrapper">
+            <svg data-element-type="icon" data-icon-type="svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" fill="currentColor"></path>
+            </svg>
+          </div>
+          <h3>האם אני צריך כמה הצעות מחיר?</h3>
+          <button class="home-faq-toggle" aria-label="פתח תשובה">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="home-faq-answer">
           <p>השמאי ידאג לכך. במסגרת הערכת הנזק, השמאי יקבל הצעות מחיר מקבלנים מוסמכים ויבחן את סבירות העלויות. אין צורך שתטרח לאסוף הצעות בעצמך — זה חלק מהשירות. המטרה היא להגיע להערכה מקצועית והוגנת שמשקפת את העלות האמיתית של השיקום.</p>
         </div>
       </div>
 
-      <div class="home-faq-item" data-grid-item-index="3">
-        <button class="home-faq-question" aria-expanded="false" data-element-type="button" data-element-id="btn-1771165792727-pk0einv1k" data-native-element="true">
-          <span class="home-faq-question-text">כמה זמן לוקח תהליך השמאות?</span>
-          <svg class="home-faq-icon" aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </button>
-        <div class="home-faq-answer" hidden="">
+      <div class="home-faq-item" data-faq-index="3">
+        <div class="home-faq-question">
+          <div class="home-faq-icon-wrapper">
+            <svg data-element-type="icon" data-icon-type="svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" fill="currentColor"></path>
+            </svg>
+          </div>
+          <h3>כמה זמן לוקח תהליך השמאות?</h3>
+          <button class="home-faq-toggle" aria-label="פתח תשובה">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="home-faq-answer">
           <p>הביקור הראשוני בנכס לוקח בדרך כלל שעה עד שעתיים, תלוי בהיקף הנזק. לאחר מכן, הכנת הדוח המפורט והתיאום עם הקבלנים יכולים לקחת מספר ימים. בסך הכל, מרגע הפנייה ועד קבלת הדוח הסופי, התהליך נמשך בין שבוע לשבועיים במקרים רגילים. במקרים מורכבים יותר, זה עשוי להימשך זמן נוסף.</p>
         </div>
       </div>
 
-      <div class="home-faq-item" data-grid-item-index="4">
-        <button class="home-faq-question" aria-expanded="false" data-element-type="button" data-element-id="btn-1771165792727-0txxof2ap" data-native-element="true">
-          <span class="home-faq-question-text">מה משפיע על התיעוד הסופי?</span>
-          <svg class="home-faq-icon" aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </button>
-        <div class="home-faq-answer" hidden="">
+      <div class="home-faq-item" data-faq-index="4">
+        <div class="home-faq-question">
+          <div class="home-faq-icon-wrapper">
+            <svg data-element-type="icon" data-icon-type="svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" fill="currentColor"></path>
+            </svg>
+          </div>
+          <h3>מה משפיע על התיעוד הסופי?</h3>
+          <button class="home-faq-toggle" aria-label="פתח תשובה">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="home-faq-answer">
           <p>התיעוד מושפע מכמה גורמים: היקף הנזק הנראה לעין והנזק הנסתר (כמו רטיבות בקירות), גיל ומצב הנכס לפני האירוע, סוג החומרים והגימורים שניזוקו, ופוליסת הביטוח הספציפית שלך. השמאי לוקח בחשבון את כל הפרמטרים האלה כדי להגיע להערכה מקיפה ומדויקת.</p>
         </div>
       </div>
 
-      <div class="home-faq-item" data-grid-item-index="5">
-        <button class="home-faq-question" aria-expanded="false" data-element-type="button" data-element-id="zappy-drop-m9t66sbo5" data-native-element="true" style="outline: none;">
-          <span class="home-faq-question-text">מה נחשב למניעת "נזק נוסף"?</span>
-          <svg class="home-faq-icon" aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </button>
-        <div class="home-faq-answer" hidden="">
+      <div class="home-faq-item" data-faq-index="5">
+        <div class="home-faq-question">
+          <div class="home-faq-icon-wrapper">
+            <svg data-element-type="icon" data-icon-type="svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"></path>
+            </svg>
+          </div>
+          <h3>מה נחשב למניעת "נזק נוסף"?</h3>
+          <button class="home-faq-toggle" aria-label="פתח תשובה">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="home-faq-answer">
           <p>מניעת נזק נוסף כוללת פעולות דחופות כמו סגירת מקור המים, ייבוש ראשוני של השטח, איוורור, כיסוי חורים או סדקים שדרכם חודרים גשם או רוח. אלה פעולות שאתם יכולים ואמורים לבצע מיד, לפני הגעת השמאי. חשוב לתעד את הפעולות האלה (תמונות, חשבוניות) כי הן חלק מהתביעה.</p>
         </div>
       </div>
 
-      <div class="home-faq-item" data-grid-item-index="6">
-        <button class="home-faq-question" aria-expanded="false" data-element-type="button" data-element-id="zappy-drop-d5hps6mvd" data-native-element="true" style="outline: none;">
-          האם תתאם עם אנשי מקצוע נוספים?
-          
-            
-          
-        </button>
-        <div class="home-faq-answer" hidden="">
+      <div class="home-faq-item" data-faq-index="6">
+        <div class="home-faq-question">
+          <div class="home-faq-icon-wrapper">
+            <svg data-element-type="icon" data-icon-type="svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" fill="currentColor"></path>
+            </svg>
+          </div>
+          <h3>האם תתאם עם אנשי מקצוע נוספים?</h3>
+          <button class="home-faq-toggle" aria-label="פתח תשובה">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="home-faq-answer">
           <p>כן, במידת הצורך. במקרים מורכבים שדורשים מומחיות נוספת — כמו בדיקות אלקטריות, אינסטלציה, קונסטרוקציה או בדיקת עובש — השמאי ידאג לתאם עם אנשי מקצוע רלוונטיים. הכל נעשה בתיאום מלא איתך ומתועד בדוח הסופי.</p>
         </div>
       </div>
 
-      <div class="home-faq-item active" style="display: flex !important; flex-direction: column !important; justify-content: flex-start !important; align-items: stretch !important;" data-grid-item-index="7">
-        <button class="home-faq-question btn btn-primary" aria-expanded="true" data-element-type="button" data-element-id="zappy-drop-pr34u9l67" data-native-element="true" style="outline: none; border-color: rgb(198, 90, 61) !important; color: var(--light-text, #ffffff) !important; background-color: rgb(198, 90, 61) !important; background-image: none !important;" data-text-color="light">
-          איזה מידע כדאי להכין לשיחה הראשונה?</button>
-        <div class="home-faq-answer" hidden="">
+      <div class="home-faq-item" data-faq-index="7">
+        <div class="home-faq-question">
+          <div class="home-faq-icon-wrapper">
+            <svg data-element-type="icon" data-icon-type="svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM9 11H7V9h2v2zm4 0h-2V9h2v2zm4 0h-2V9h2v2z" fill="currentColor"></path>
+            </svg>
+          </div>
+          <h3>איזה מידע כדאי להכין לשיחה הראשונה?</h3>
+          <button class="home-faq-toggle" aria-label="פתח תשובה">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="home-faq-answer">
           <p>מומלץ להכין: תיאור קצר של האירוע (מתי קרה, איך גילית), תמונות של הנזק אם יש, פרטי פוליסת הביטוח שלך (שם החברה, מספר פוליסה), וכל תיעוד קיים (חשבוניות, דוחות). אם אין לך הכל, זה בסדר — נדבר ונבין יחד מה צריך.</p>
         </div>
       </div>
     </div>
 
-    <div class="home-faq-callout">
+    <div class="home-faq-cta-card">
       <h3>לא בטוח לאיזו קטגוריה המקרה שלך משתייך?</h3>
       <p>שלח הודעה קצרה ונחזור אליך עם הצעד המעשי הבא.</p>
-      <a href="#contact" class="btn-primary" data-element-type="button" data-element-id="btn-1771165792727-mu9xe0gdo" data-native-element="true">שלח הודעה</a>
+      <a href="#contact" class="btn-whatsapp">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="currentColor"></path>
+        </svg>
+        שלח הודעה
+      </a>
     </div>
-  </div>
-
-  <div class="home-faq-divider-wrapper">
-    <svg aria-hidden="true" viewBox="0 0 1200 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="faq-ribbon-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" style="stop-color:#C9AA72;stop-opacity:0.3"></stop>
-          <stop offset="50%" style="stop-color:#C9AA72;stop-opacity:0.5"></stop>
-          <stop offset="100%" style="stop-color:#C9AA72;stop-opacity:0.3"></stop>
-        </linearGradient>
-      </defs>
-      <path d="M0,100 L0,60 Q300,45 600,55 T1200,60 L1200,100 Z" fill="var(--bg-dark)"></path>
-      <path d="M0,60 Q300,45 600,55 T1200,60" stroke="url(#faq-ribbon-gradient)" stroke-width="2" fill="none"></path>
-    </svg>
   </div>
 </section>
 
