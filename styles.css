@@ -6552,6 +6552,255 @@ body.accessibility-widget-visible ._access-menu {
   }
 }
 
+/* ═══════════════════════════════════════════════════════════
+   V2 REGENERATED SECTION CSS (שירותים-services)
+   Added: 2026-02-16T07:50:09.930Z
+   ═══════════════════════════════════════════════════════════ */
+.שירותים-services-section {
+  background: #F6F0E7;
+  color: #2F2A24;
+  padding: 120px 16px 80px;
+  position: relative;
+  overflow: visible;
+}
+
+.שירותים-services-section .services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.שירותים-services-section .services-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.שירותים-services-section .services-header h2 {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  color: #2F2A24;
+  margin-bottom: 16px;
+}
+
+.שירותים-services-section .services-intro {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #6B6F74;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.שירותים-services-section .services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+.שירותים-services-section .service-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(47,42,36,0.14);
+  border-radius: 4px;
+  box-shadow: 0 8px 18px rgba(47,42,36,0.14);
+  padding: 28px 24px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+  will-change: transform;
+}
+
+.שירותים-services-section .service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(47,42,36,0.20);
+}
+
+.שירותים-services-section .service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.שירותים-services-section .service-card:hover::before {
+  opacity: 1;
+}
+
+.שירותים-services-section .service-card-water::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle at center, rgba(77,111,146,0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.שירותים-services-section .service-card-fire::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle at center, rgba(200,85,42,0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.שירותים-services-section .service-card-break::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle at center, rgba(110,127,62,0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.שירותים-services-section .service-card-terror::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle at center, rgba(201,170,114,0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.שירותים-services-section .service-card-accident::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle at center, rgba(77,111,146,0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.שירותים-services-section .service-card-storm::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle at center, rgba(200,85,42,0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.שירותים-services-section .service-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.שירותים-services-section .service-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: rgba(200,85,42,0.08);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  transition: all 220ms ease;
+}
+
+.שירותים-services-section .service-card:hover .service-icon {
+  background: var(--primary);
+  color: #FFFFFF;
+  transform: scale(1.05);
+}
+
+.שירותים-services-section .service-card-header h3 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #2F2A24;
+  margin: 0;
+  padding-top: 4px;
+}
+
+.שירותים-services-section .service-card p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #2F2A24;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.שירותים-services-section .service-badge {
+  display: inline-block;
+  background: rgba(110,127,62,0.12);
+  color: var(--secondary);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 3px;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .שירותים-services-section {
+    padding: 100px 16px 60px;
+  }
+
+  .שירותים-services-section .services-header {
+    margin-bottom: 40px;
+  }
+
+  .שירותים-services-section .services-header h2 {
+    font-size: 26px;
+  }
+
+  .שירותים-services-section .services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+
+  .שירותים-services-section .service-card {
+    padding: 24px 20px;
+  }
+
+  .שירותים-services-section .service-card-header {
+    gap: 12px;
+  }
+
+  .שירותים-services-section .service-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .שירותים-services-section .service-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .שירותים-services-section .service-card-header h3 {
+    font-size: 16px;
+  }
+}
+
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
 /* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */
 /* For RTL sites: hamburger on RIGHT, phone on LEFT (mirror of LTR layout) */
