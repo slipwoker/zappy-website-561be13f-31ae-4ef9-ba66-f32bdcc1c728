@@ -6801,6 +6801,216 @@ body.accessibility-widget-visible ._access-menu {
   }
 }
 
+/* ═══════════════════════════════════════════════════════════
+   V2 REGENERATED SECTION CSS (שירותים-services)
+   Added: 2026-02-16T08:31:44.587Z
+   ═══════════════════════════════════════════════════════════ */
+.שירותים-services-section {
+  background: #F6F0E7;
+  color: #2F2A24;
+  padding: 120px 16px 80px;
+  position: relative;
+  overflow: visible;
+}
+
+.שירותים-services-section .services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.שירותים-services-section .services-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.שירותים-services-section .services-header h2 {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  color: #2F2A24;
+  margin-bottom: 16px;
+}
+
+.שירותים-services-section .services-subtitle {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.7;
+  color: #6B6F74;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.שירותים-services-section .services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 32px;
+}
+
+.שירותים-services-section .service-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(47,42,36,0.14);
+  border-radius: 4px;
+  box-shadow: 0 8px 18px rgba(47,42,36,0.14);
+  overflow: hidden;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+  will-change: transform;
+  position: relative;
+}
+
+.שירותים-services-section .service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(47,42,36,0.20);
+}
+
+.שירותים-services-section .service-card:nth-child(1),
+.שירותים-services-section .service-card:nth-child(4) {
+  background-image: linear-gradient(135deg, rgba(200,85,42,0.0) 0%, rgba(200,85,42,0.0) 70%, rgba(200,85,42,0.22) 70%, rgba(200,85,42,0.22) 100%);
+}
+
+.שירותים-services-section .service-card:nth-child(2),
+.שירותים-services-section .service-card:nth-child(5) {
+  background-image: linear-gradient(135deg, rgba(110,127,62,0.0) 0%, rgba(110,127,62,0.0) 70%, rgba(110,127,62,0.22) 70%, rgba(110,127,62,0.22) 100%);
+}
+
+.שירותים-services-section .service-card:nth-child(3),
+.שירותים-services-section .service-card:nth-child(6) {
+  background-image: linear-gradient(135deg, rgba(214,168,91,0.0) 0%, rgba(214,168,91,0.0) 70%, rgba(214,168,91,0.22) 70%, rgba(214,168,91,0.22) 100%);
+}
+
+.שירותים-services-section .service-card-inner {
+  padding: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.שירותים-services-section .service-icon-wrapper {
+  width: 56px;
+  height: 56px;
+  background: rgba(200,85,42,0.10);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: #C8552A;
+}
+
+.שירותים-services-section .service-card:nth-child(2) .service-icon-wrapper,
+.שירותים-services-section .service-card:nth-child(5) .service-icon-wrapper {
+  background: rgba(110,127,62,0.10);
+  color: #6E7F3E;
+}
+
+.שירותים-services-section .service-card:nth-child(3) .service-icon-wrapper,
+.שירותים-services-section .service-card:nth-child(6) .service-icon-wrapper {
+  background: rgba(214,168,91,0.10);
+  color: #D6A85B;
+}
+
+.שירותים-services-section .service-icon-wrapper svg {
+  width: 28px;
+  height: 28px;
+  stroke-width: 2;
+}
+
+.שירותים-services-section .service-image-container {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  overflow: hidden;
+  background: rgba(47,42,36,0.05);
+}
+
+.שירותים-services-section .service-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.שירותים-services-section .service-content h3 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #2F2A24;
+  margin-bottom: 12px;
+}
+
+.שירותים-services-section .service-content p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.7;
+  color: #2F2A24;
+  margin-bottom: 16px;
+}
+
+.שירותים-services-section .service-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6B6F74;
+  background: rgba(47,42,36,0.06);
+  padding: 6px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+  .שירותים-services-section {
+    padding: 100px 16px 60px;
+  }
+
+  .שירותים-services-section .services-header {
+    margin-bottom: 40px;
+  }
+
+  .שירותים-services-section .services-header h2 {
+    font-size: 26px;
+  }
+
+  .שירותים-services-section .services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+  }
+
+  .שירותים-services-section .service-card-inner {
+    padding: 20px;
+  }
+
+  .שירותים-services-section .service-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 16px;
+  }
+
+  .שירותים-services-section .service-icon-wrapper svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .שירותים-services-section .service-image-container {
+    height: 180px;
+    margin-bottom: 16px;
+  }
+
+  .שירותים-services-section .service-content h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .שירותים-services-section .service-content p {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .שירותים-services-section .service-tag {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+}
+
 /* ========== RTL MOBILE NAVBAR FIX (zappy-rtl-mobile-fix) ========== */
 /* High-specificity rules to ensure RTL positioning wins over any [lang="en"] conflicts */
 /* For RTL sites: hamburger on RIGHT, phone on LEFT (mirror of LTR layout) */
