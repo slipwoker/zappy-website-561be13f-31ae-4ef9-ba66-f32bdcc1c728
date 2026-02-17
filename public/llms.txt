@@ -1,40 +1,50 @@
-# Business — Generative Engine Optimization Map
+# ירון חזן - שמאי רכוש — Generative Engine Optimization Map
+
+> A ביטוח ושמאות business.
 
 ---
 
 ## Pages
 
 ### בית
-https://example.com
+https://yaron-hazan-property-appraiser.zappy5.app
 
 ### שירותים
-https://example.com/services
+https://yaron-hazan-property-appraiser.zappy5.app/services
 
 ### צור קשר
-https://example.com/contact
+https://yaron-hazan-property-appraiser.zappy5.app/contact
 
 ## Legal & Policy
 
 ### Privacy Policy
-https://example.com/privacy
+https://yaron-hazan-property-appraiser.zappy5.app/privacy
 Information about how user data is collected, stored, and protected.
 
 ### Terms & Conditions
-https://example.com/terms
+https://yaron-hazan-property-appraiser.zappy5.app/terms
 Legal terms describing service usage, rights, and policies.
 
 ### Accessibility Statement
-https://example.com/accessibility
+https://yaron-hazan-property-appraiser.zappy5.app/accessibility
 Information about WCAG compliance and accessibility features.
 
 ---
 
 # Business Context (for LLM understanding)
 
-## About Business
+## About ירון חזן - שמאי רכוש
+ירון חזן - שמאי רכוש is a business in the ביטוח ושמאות industry.
+
+## Target Audience
+אנשים עם נזק בדירה או בעסק מנזק מים/רטיבות, שריפה או פריצה
+
+## Industry
+ביטוח ושמאות
+
 ---
 
 # Additional Resources
 
-- **Sitemap**: https://example.com/sitemap.xml
-- **Robots.txt**: https://example.com/robots.txt
+- **Sitemap**: https://yaron-hazan-property-appraiser.zappy5.app/sitemap.xml
+- **Robots.txt**: https://yaron-hazan-property-appraiser.zappy5.app/robots.txt
