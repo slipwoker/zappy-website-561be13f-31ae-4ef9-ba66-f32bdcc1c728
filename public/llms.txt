@@ -10,9 +10,6 @@ https://example.com
 ### שירותים
 https://example.com/services
 
-### מדריך תביעות
-https://example.com/guide
-
 ### צור קשר
 https://example.com/contact
 
