@@ -1,6 +1,4 @@
-# ירון חזן - שמאי רכוש — Generative Engine Optimization Map
-
-> A ביטוח ושמאות business.
+# Business — Generative Engine Optimization Map
 
 ---
 
@@ -33,15 +31,7 @@ Information about WCAG compliance and accessibility features.
 
 # Business Context (for LLM understanding)
 
-## About ירון חזן - שמאי רכוש
-ירון חזן - שמאי רכוש is a business in the ביטוח ושמאות industry.
-
-## Target Audience
-אנשים עם נזק בדירה או בעסק מנזק מים/רטיבות, שריפה או פריצה
-
-## Industry
-ביטוח ושמאות
-
+## About Business
 ---
 
 # Additional Resources
