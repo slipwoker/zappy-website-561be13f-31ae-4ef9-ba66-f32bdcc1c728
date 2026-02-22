@@ -5,26 +5,26 @@
 ## Pages
 
 ### בית
-https://yaron-hazan-property-appraiser.zappy5.app
+https://shamayh.co.il
 
 ### שירותים
-https://yaron-hazan-property-appraiser.zappy5.app/services
+https://shamayh.co.il/services
 
 ### צור קשר
-https://yaron-hazan-property-appraiser.zappy5.app/contact
+https://shamayh.co.il/contact
 
 ## Legal & Policy
 
 ### Privacy Policy
-https://yaron-hazan-property-appraiser.zappy5.app/privacy
+https://shamayh.co.il/privacy
 Information about how user data is collected, stored, and protected.
 
 ### Terms & Conditions
-https://yaron-hazan-property-appraiser.zappy5.app/terms
+https://shamayh.co.il/terms
 Legal terms describing service usage, rights, and policies.
 
 ### Accessibility Statement
-https://yaron-hazan-property-appraiser.zappy5.app/accessibility
+https://shamayh.co.il/accessibility
 Information about WCAG compliance and accessibility features.
 
 ---
@@ -36,5 +36,5 @@ Information about WCAG compliance and accessibility features.
 
 # Additional Resources
 
-- **Sitemap**: https://yaron-hazan-property-appraiser.zappy5.app/sitemap.xml
-- **Robots.txt**: https://yaron-hazan-property-appraiser.zappy5.app/robots.txt
+- **Sitemap**: https://shamayh.co.il/sitemap.xml
+- **Robots.txt**: https://shamayh.co.il/robots.txt

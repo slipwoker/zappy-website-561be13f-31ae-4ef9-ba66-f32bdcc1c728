@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yaron-hazan-property-appraiser.zappy5.app/sitemap.xml
+Sitemap: https://shamayh.co.il/sitemap.xml
