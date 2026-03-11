@@ -254,7 +254,7 @@
       .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
       /* Submenu item styling */
       .sub-menu li { list-style: none; margin: 0; padding: 0; }
-      .sub-menu a { display: block !important; padding: 10px 16px !important; color: #333 !important; font-weight: 500; text-decoration: none; white-space: nowrap; transition: background-color 0.2s; }
+      .sub-menu a { display: block !important; padding: 10px 16px !important; color: var(--text-dark, #333) !important; font-weight: 500; text-decoration: none; white-space: nowrap; transition: background-color 0.2s; }
       .sub-menu a:hover { background-color: #f5f5f5; }
       /* RTL (Hebrew/Arabic) dropdown positioning */
       [dir="rtl"] .nav-menu .sub-menu, [dir="rtl"] nav .sub-menu, [dir="rtl"] .navbar .sub-menu, html[lang="he"] .nav-menu .sub-menu, html[lang="he"] nav .sub-menu, html[lang="he"] .navbar .sub-menu, html[lang="ar"] .nav-menu .sub-menu, html[lang="ar"] nav .sub-menu, html[lang="ar"] .navbar .sub-menu { left: auto !important; right: 0 !important; }
@@ -440,7 +440,15 @@
 
   </main>
   
-  <footer class="site-footer">
+  <!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ירון חזן - שמאי רכוש</title>
+</head>
+<body>
+<footer class="site-footer">
   <div class="footer-container">
     <div class="footer-grid">
       <div class="footer-column footer-about">
@@ -469,7 +477,7 @@
             <a href="tel:053-3360976">053-3360976</a>
           </li>
           <li><a href="/"><i class="fas fa-map-marker-alt"></i>
-            <span>כפר סבא, ישראל</span></a></li>
+            <span>כפר סבא,, כפר סבא, כפר סבא, כפר סבא, כפר סבא, ישראל</span></a></li>
         </ul>
       </div>
       
@@ -519,6 +527,9 @@
           <a href="https://wa.me/972533360976" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-whatsapp"></i>
           </a>
+          <a href="https://linkedin.com/company/ירון-חזן-שמאי-רכוש" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" data-element-type="link" data-element-id="element-ai-1773232514530-x8k2m9">
+            <i class="fab fa-linkedin"></i>
+          </a>
         </div>
       </div>
     </div>
@@ -540,14 +551,6 @@
     </div>
   </div>
 </footer>
-  
-  <a href="https://wa.me/972533360976" class="whatsapp-float" aria-label="WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-  
-  <div data-integration="accessibility:toolbar"></div>
-
-    <script src="/script.js"></script>
 
     <script id="zappy-mobile-submenu-script">
     (function() {
@@ -599,5 +602,15 @@
       }, 500);
     })();
     </script>
+</body>
+</html>
+  
+  <a href="https://wa.me/972533360976" class="whatsapp-float" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  
+  <div data-integration="accessibility:toolbar"></div>
+
+    <script src="/script.js"></script>
 </body>
 </html>
