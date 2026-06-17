@@ -161,26 +161,31 @@
       // Track button clicks (counted as actions)
       if (target.tagName === 'BUTTON' || target.closest('button')) {
         var button = target.tagName === 'BUTTON' ? target : target.closest('button');
-        trackEvent('click', {
+        var clickMeta = {
           element: 'button',
           text: button.textContent.trim().substring(0, 100),
           id: button.id || null,
           class: button.className || null
-        });
+        };
+        
+        trackEvent('click', clickMeta);
       }
       
       // Track link clicks (navigation - not counted as actions)
       else if (target.tagName === 'A' || target.closest('a')) {
         var link = target.tagName === 'A' ? target : target.closest('a');
-        trackEvent('navigation', {
+        var navMeta = {
           element: 'link',
           text: link.textContent.trim().substring(0, 100),
           href: link.href,
           external: link.hostname !== window.location.hostname
-        });
+        };
+        
+        trackEvent('navigation', navMeta);
       }
     }, true);
   }
+  
   
   // Track form submissions
   if (config.trackFormSubmissions) {
@@ -218,6 +223,12 @@
 })();
 </script>
 <!-- End Zappy Analytics -->
+    <meta property="og:title" content="שאלות ותשובות – נזקי מלחמה וטרור">
+    <meta property="og:description" content="ירון חזן - שמאי רכוש - שאלות ותשובות – נזקי מלחמה וטרור">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="שאלות ותשובות – נזקי מלחמה וטרור">
+    <meta name="twitter:description" content="ירון חזן - שמאי רכוש - שאלות ותשובות – נזקי מלחמה וטרור">
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"LocalBusiness","@id":"https://shamayh.co.il#organization","name":"ירון חזן - שמאי רכוש","url":"https://shamayh.co.il","address":{"@type":"PostalAddress","streetAddress":"כפר סבא,, כפר סבא"},"contactPoint":[{"@type":"ContactPoint","contactType":"customer service","email":"ya1hazan@gmail.com","telephone":"053-3360976"}]},{"@type":"WebSite","@id":"https://shamayh.co.il#website","url":"https://shamayh.co.il","name":"ירון חזן - שמאי רכוש","publisher":{"@id":"https://shamayh.co.il#organization"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shamayh.co.il"},{"@type":"ListItem","position":2,"name":"War Damage","item":"https://shamayh.co.il/war-damage"}]}]}</script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Favicons -->
@@ -996,8 +1007,8 @@
             }
             
             /* Menu Group styling (non-clickable parent) - TOP LEVEL ONLY with ultra-specific selector */
-            .nav-menu &gt; li &gt; .menu-group-title,
-            #navMenu &gt; li &gt; .menu-group-title {
+            .nav-menu > li > .menu-group-title,
+            #navMenu > li > .menu-group-title {
               display: inline-block !important;
               padding: 0.5rem 1rem !important;
               color: var(--nav-color) !important;
@@ -1011,13 +1022,13 @@
               transition: color 0.3s ease !important;
             }
             
-            .nav-menu &gt; li &gt; .menu-group-title:hover,
-            #navMenu &gt; li &gt; .menu-group-title:hover {
+            .nav-menu > li > .menu-group-title:hover,
+            #navMenu > li > .menu-group-title:hover {
               color: var(--nav-hover-color) !important;
             }
             
             /* Desktop: show submenu on Menu Group hover */
-            li:has(.menu-group-title):hover &gt; .sub-menu {
+            li:has(.menu-group-title):hover > .sub-menu {
               opacity: 1 !important;
               visibility: visible !important;
               transform: translateY(0) !important;
@@ -1026,7 +1037,7 @@
             
             /* Hide menu items marked as hidden (overrides hover states) */
             .zappy-hidden-menu-item,
-            li:has(.menu-group-title):hover &gt; .sub-menu .zappy-hidden-menu-item {
+            li:has(.menu-group-title):hover > .sub-menu .zappy-hidden-menu-item {
               display: none !important;
               opacity: 0 !important;
               visibility: hidden !important;
@@ -1079,9 +1090,9 @@
             }
             
             /* Show submenu on parent hover - more specific selectors */
-            .nav-menu li:hover &gt; .sub-menu,
-            nav li:hover &gt; .sub-menu,
-            .navbar li:hover &gt; .sub-menu {
+            .nav-menu li:hover > .sub-menu,
+            nav li:hover > .sub-menu,
+            .navbar li:hover > .sub-menu {
               opacity: 1 !important;
               visibility: visible !important;
               transform: translateY(0) !important;
@@ -1119,8 +1130,8 @@
             }
             
             /* CRITICAL: Override submenu styles for TOP-LEVEL Menu Groups only - must come AFTER submenu styles */
-            .nav-menu &gt; li &gt; .menu-group-title,
-            #navMenu &gt; li &gt; .menu-group-title {
+            .nav-menu > li > .menu-group-title,
+            #navMenu > li > .menu-group-title {
               display: inline-block !important;
               padding: 0.5rem 1rem !important;
               color: var(--nav-color) !important;
@@ -1134,8 +1145,8 @@
               transition: color 0.3s ease !important;
             }
             
-            .nav-menu &gt; li &gt; .menu-group-title:hover,
-            #navMenu &gt; li &gt; .menu-group-title:hover {
+            .nav-menu > li > .menu-group-title:hover,
+            #navMenu > li > .menu-group-title:hover {
               color: var(--nav-hover-color) !important;
               background-color: transparent !important;
             }
@@ -1176,18 +1187,18 @@
               }
               
               /* Disable hover behavior on mobile */
-              .nav-menu li:hover &gt; .sub-menu,
-              nav li:hover &gt; .sub-menu,
-              .navbar li:hover &gt; .sub-menu {
+              .nav-menu li:hover > .sub-menu,
+              nav li:hover > .sub-menu,
+              .navbar li:hover > .sub-menu {
                 opacity: 0;
                 visibility: hidden;
                 pointer-events: none;
               }
               
               /* Enable visibility for expanded submenus */
-              .nav-menu li &gt; .sub-menu.mobile-expanded,
-              nav li &gt; .sub-menu.mobile-expanded,
-              .navbar li &gt; .sub-menu.mobile-expanded {
+              .nav-menu li > .sub-menu.mobile-expanded,
+              nav li > .sub-menu.mobile-expanded,
+              .navbar li > .sub-menu.mobile-expanded {
                 opacity: 1 !important;
                 visibility: visible !important;
                 pointer-events: auto !important;
@@ -1215,39 +1226,39 @@
               }
               
               /* Parent link - takes full width since toggle is absolute (not a flex child) */
-              .nav-menu li:has(.sub-menu) &gt; a,
-              nav li:has(.sub-menu) &gt; a,
-              .navbar li:has(.sub-menu) &gt; a,
-              .nav-menu &gt; li &gt; .menu-group-title,
-              #navMenu &gt; li &gt; .menu-group-title {
+              .nav-menu li:has(.sub-menu) > a,
+              nav li:has(.sub-menu) > a,
+              .navbar li:has(.sub-menu) > a,
+              .nav-menu > li > .menu-group-title,
+              #navMenu > li > .menu-group-title {
                 flex: 1 !important;
                 min-width: 0 !important;
               }
               
               /* Normalize menu-group-title in mobile nav to match link alignment */
-              .nav-menu &gt; li &gt; .menu-group-title,
-              #navMenu &gt; li &gt; .menu-group-title {
+              .nav-menu > li > .menu-group-title,
+              #navMenu > li > .menu-group-title {
                 padding: 0 !important;
                 line-height: inherit !important;
               }
               
               /* Submenu takes full width below parent */
-              .nav-menu li:has(.sub-menu) &gt; .sub-menu,
-              nav li:has(.sub-menu) &gt; .sub-menu,
-              .navbar li:has(.sub-menu) &gt; .sub-menu {
+              .nav-menu li:has(.sub-menu) > .sub-menu,
+              nav li:has(.sub-menu) > .sub-menu,
+              .navbar li:has(.sub-menu) > .sub-menu {
                 flex-basis: 100% !important;
                 width: 100% !important;
               }
               
               /* HIDE EXISTING CHEVRONS/ARROWS from cloned sites to prevent duplicates */
-              .nav-menu li:has(.sub-menu) &gt; a .fa-chevron-down,
-              .nav-menu li:has(.sub-menu) &gt; a .fa-angle-down,
-              .nav-menu li:has(.sub-menu) &gt; a [class*="chevron"],
-              .nav-menu li:has(.sub-menu) &gt; a [class*="arrow"],
-              nav li:has(.sub-menu) &gt; a [class*="chevron"],
-              nav li:has(.sub-menu) &gt; a [class*="arrow"],
-              #navMenu li:has(.sub-menu) &gt; a [class*="chevron"],
-              #navMenu li:has(.sub-menu) &gt; a [class*="arrow"] {
+              .nav-menu li:has(.sub-menu) > a .fa-chevron-down,
+              .nav-menu li:has(.sub-menu) > a .fa-angle-down,
+              .nav-menu li:has(.sub-menu) > a [class*="chevron"],
+              .nav-menu li:has(.sub-menu) > a [class*="arrow"],
+              nav li:has(.sub-menu) > a [class*="chevron"],
+              nav li:has(.sub-menu) > a [class*="arrow"],
+              #navMenu li:has(.sub-menu) > a [class*="chevron"],
+              #navMenu li:has(.sub-menu) > a [class*="arrow"] {
                 display: none !important;
                 visibility: hidden !important;
               }
@@ -1302,10 +1313,10 @@
             (function() {
               function initMobileMenuToggles() {
                 // Only run on mobile
-                if (window.innerWidth &gt; 768) {
+                if (window.innerWidth > 768) {
                   // Remove any toggle buttons on desktop
-                  document.querySelectorAll('.mobile-submenu-toggle').forEach(btn =&gt; btn.remove());
-                  document.querySelectorAll('.sub-menu.mobile-expanded').forEach(menu =&gt; {
+                  document.querySelectorAll('.mobile-submenu-toggle').forEach(btn => btn.remove());
+                  document.querySelectorAll('.sub-menu.mobile-expanded').forEach(menu => {
                     menu.classList.remove('mobile-expanded');
                   });
                   console.log('[MOBILE MENU] Desktop mode - cleanup done');
@@ -1328,7 +1339,7 @@
                   }
                   
                   const submenu = li.querySelector('.sub-menu');
-                  const parentLink = li.querySelector(':scope &gt; a') || li.querySelector(':scope &gt; .menu-group-title');
+                  const parentLink = li.querySelector(':scope > a') || li.querySelector(':scope > .menu-group-title');
                   
                   if (!submenu || !parentLink) return;
                   
@@ -1388,7 +1399,7 @@
               // This handles cases where the mobile menu is hidden initially
               const observer = new MutationObserver(function(mutations) {
                 mutations.forEach(function(mutation) {
-                  if (mutation.type === 'attributes' &amp;&amp; mutation.attributeName === 'class') {
+                  if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
                     const target = mutation.target;
                     if (target.classList.contains('active') || target.style.display !== 'none') {
                       console.log('[MOBILE MENU] Mobile menu became visible, re-initializing...');
@@ -1409,19 +1420,19 @@
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:url" content="https://shamayh.co.il/war-damage">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="שאלות ותשובות – נזקי מלחמה וטרור">
-    <meta property="og:description" content="ירון חזן - שמאי רכוש - שאלות ותשובות – נזקי מלחמה וטרור">
-    <meta property="og:image" content="https://shamayh.co.il/assets/section-page-hero-war-terror-damage-faq-page-hero-image-1-og.jpg">
+    
+    
+    
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:alt" content="שאלות ותשובות – נזקי מלחמה וטרור">
     <meta property="og:locale" content="he_IL">
     <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="שאלות ותשובות – נזקי מלחמה וטרור">
-    <meta name="twitter:description" content="ירון חזן - שמאי רכוש - שאלות ותשובות – נזקי מלחמה וטרור">
-    <meta name="twitter:image" content="https://shamayh.co.il/assets/section-page-hero-war-terror-damage-faq-page-hero-image-1-og.jpg">
+    
+    
+    
+    
     <meta name="twitter:image:alt" content="שאלות ותשובות – נזקי מלחמה וטרור"><style id="zappy-ai-page-styles">.war-terror-damage-faq-page-hero-section {
   position: relative;
   background: #F6F0E7;
@@ -2304,13 +2315,13 @@ gtag('consent', 'default', {
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer',' GTM-PGTGTPHP');</script>
 <!-- ZAPPY_INTEGRATION_END analytics:add_google_tag_manager -->
       <!-- ZAPPY_INTEGRATION_START analytics:add_google_analytics -->
 <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HY87QLRR19"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HY87QLRR19"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -2334,13 +2345,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 </script>
 <!-- ZAPPY_INTEGRATION_END analytics:add_facebook_pixel -->
     <link rel="stylesheet" href="/styles.css">
+    <script>window.ZAPPY_WEBSITE_ID = "561be13f-31ae-4ef9-ba66-f32bdcc1c728"; window.ZAPPY_API_BASE = "https://api.zappy5.com";</script>
 
     <style id="zappy-widget-visibility">
-      #mic-access-tool-general-button, .mic-access-tool-general-button,
-      #mic-init-access-tool .mic-access-tool-general-button, #mic-init-access-tool #mic-access-tool-general-button,
-      ._access-icon, #mic-access-tool-box, .mic-access-tool-box,
-      #mic-init-access-tool #mic-access-tool-box, div[id*="mic-access-tool-box"], ._access-menu {
-        display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important;
+      html[dir="rtl"] .whatsapp-float { right: 20px !important; left: auto !important; }
+      html[dir="ltr"] .whatsapp-float, html:not([dir]) .whatsapp-float { left: 20px !important; right: auto !important; }
+      html[dir="rtl"] #mic-access-tool-general-button, html[dir="rtl"] .mic-access-tool-general-button,
+      html[dir="rtl"] #mic-init-access-tool .mic-access-tool-general-button,
+      html[dir="rtl"] #mic-init-access-tool #mic-access-tool-general-button,
+      html[dir="rtl"] ._access-icon { left: 20px !important; right: auto !important; }
+      html[dir="ltr"] #mic-access-tool-general-button, html[dir="ltr"] .mic-access-tool-general-button,
+      html[dir="ltr"] #mic-init-access-tool .mic-access-tool-general-button,
+      html[dir="ltr"] #mic-init-access-tool #mic-access-tool-general-button,
+      html[dir="ltr"] ._access-icon,
+      html:not([dir]) #mic-access-tool-general-button, html:not([dir]) .mic-access-tool-general-button,
+      html:not([dir]) #mic-init-access-tool .mic-access-tool-general-button,
+      html:not([dir]) #mic-init-access-tool #mic-access-tool-general-button,
+      html:not([dir]) ._access-icon { right: 20px !important; left: auto !important; }
+      @media (max-width: 768px) { .whatsapp-float { display: flex !important; } }
+      @media (min-width: 769px) { .whatsapp-float { display: flex !important; } }
+      @media (max-width: 768px) {
+        #mic-access-tool-general-button, .mic-access-tool-general-button,
+        #mic-init-access-tool .mic-access-tool-general-button, #mic-init-access-tool #mic-access-tool-general-button,
+        ._access-icon, #mic-access-tool-box, .mic-access-tool-box,
+        #mic-init-access-tool #mic-access-tool-box, div[id*="mic-access-tool-box"], ._access-menu {
+          display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important;
+        }
+      }
+      @media (min-width: 769px) {
+        #mic-access-tool-general-button, .mic-access-tool-general-button,
+        #mic-init-access-tool .mic-access-tool-general-button, #mic-init-access-tool #mic-access-tool-general-button,
+        ._access-icon, #mic-access-tool-box, .mic-access-tool-box,
+        #mic-init-access-tool #mic-access-tool-box, div[id*="mic-access-tool-box"], ._access-menu {
+          display: none !important; visibility: hidden !important; opacity: 0 !important; pointer-events: none !important;
+        }
       }
     </style>
 </head>
@@ -2353,16 +2391,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
   <nav class="navbar" dir="rtl">
   <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
     <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-      <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
     </svg>
     <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display:none;">
-      <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
     </svg>
   </button>
   
   <button class="phone-header-btn" aria-label="Call" data-phone="0533360976">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
     </svg>
   </button>
   
@@ -2385,11 +2423,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
   <div class="war-terror-damage-faq-page-hero-container">
     <div class="war-terror-damage-faq-page-hero-content">
       <h1 class="war-terror-damage-faq-page-hero-title">שאלות ותשובות – נזקי מלחמה וטרור</h1>
-      <p class="war-terror-damage-faq-page-hero-intro" style>נזקי מלחמה וטרור מלווים את חיינו יותר ויותר בשנים האחרונות. ריכזתי כאן עבורכם מידע חשוב בנושא</p>
+      <p class="war-terror-damage-faq-page-hero-intro" >נזקי מלחמה וטרור מלווים את חיינו יותר ויותר בשנים האחרונות. ריכזתי כאן עבורכם מידע חשוב בנושא</p>
       
       <div class="war-terror-damage-faq-page-hero-card">
-        <p class="war-terror-damage-faq-page-hero-card-item" style>מי אחראי לפיצוי במקרה של נזקי מלחמה וטרור</p>
-        <p class="war-terror-damage-faq-page-hero-card-item" style>מי צריך להגיש תביעה ומתי</p>
+        <p class="war-terror-damage-faq-page-hero-card-item" >מי אחראי לפיצוי במקרה של נזקי מלחמה וטרור</p>
+        <p class="war-terror-damage-faq-page-hero-card-item" >מי צריך להגיש תביעה ומתי</p>
         <p class="war-terror-damage-faq-page-hero-card-item">תשובות לשאלות הנפוצות ביותר</p>
       </div>
       
@@ -2405,104 +2443,104 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
   
   <div class="war-terror-damage-faq-page-hero-divider-wrapper">
     <svg aria-hidden="true" viewBox="0 0 1200 1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" class="war-terror-damage-faq-page-hero-divider-svg">
-      <line x1="0" y1="0.5" x2="1200" y2="0.5" stroke="var(--border-light)" stroke-width="1" opacity="0.4"/>
+      <line x1="0" y1="0.5" x2="1200" y2="0.5" stroke="var(--border-light)" stroke-width="1" opacity="0.4"></line>
     </svg>
   </div>
-<div class="zappy-inserted-element" id="zappy-element-1773349906429-zdovcy0r9" data-element-id="zappy-element-1773349906429-zdovcy0r9" data-element-type="image" data-zappy-newly-inserted="true" style="max-width: 660.4px; margin: 20px auto; text-align: center; justify-content: center;"><img src="/assets/image-element-1773349985798-8vocna.webp?v=1773349987226" alt="Image" style="width: 320px; height: auto; border-radius: 8px; max-width: 100%; object-fit: cover; margin-top: 20px; margin-right: auto !important; margin-bottom: 20px; margin-left: auto !important; position: relative; object-position: 50% 50%; display: block;" data-element-type="image" data-element-id="zappy-element-1773349906429-zdovcy0r9" id="zappy-element-1773349906429-zdovcy0r9" class="zappy-editable-image" data-original-position="static" data-resize-handler-attached="true"></div><div class="zappy-inserted-element" id="zappy-element-1773356513388-8c8dgov0v" data-element-id="zappy-element-1773356513388-8c8dgov0v" data-element-type="button" data-zappy-newly-inserted="true" style="margin: 20px auto; text-align: center !important; display: flex !important; justify-content: center !important; align-items: flex-start !important; max-width: 660.4px !important; width: 100% !important; align-self: start !important; height: auto !important;"><a href="https://wa.me/972533360976" class="btn btn-primary" style="text-decoration: none; padding: 12px 24px; border-radius: 6px; display: inline-block; border-style: solid; border-width: 2px; border-image: initial; outline: none; border-color: rgb(85, 102, 64) !important; color: rgb(255, 255, 255) !important; flex: 0 0 auto !important; background-color: rgb(85, 102, 64) !important; background-image: none !important;" data-element-type="button" data-text-color="auto" data-element-id="btn-1773356537038-f00h2sdvs" id="btn-1773356537038-f00h2sdvs" target="_blank" rel="noopener noreferrer">צריכים עזרה עכשיו? זמין לכם בוואסטאפ</a></div></section>
+<div class="zappy-inserted-element" id="zappy-element-1773349906429-zdovcy0r9" data-element-id="zappy-element-1773349906429-zdovcy0r9" data-element-type="image" data-zappy-newly-inserted="true" style="max-width: 660.4px; margin: 20px auto; text-align: center; justify-content: center;"><img src="/assets/image-element-1773349985798-8vocna.webp?v=1773349987226" alt="Image" style="width: 320px; height: auto; border-radius: 8px; max-width: 100%; object-fit: cover; margin-top: 20px; margin-right: auto !important; margin-bottom: 20px; margin-left: auto !important; object-position: 50% 50%; display: block;" data-element-type="image" data-element-id="zappy-element-1773349906429-zdovcy0r9" id="zappy-element-1773349906429-zdovcy0r9" class="zappy-editable-image"></div><div class="zappy-inserted-element" id="zappy-element-1773356513388-8c8dgov0v" data-element-id="zappy-element-1773356513388-8c8dgov0v" data-element-type="button" data-zappy-newly-inserted="true" style="margin: 20px auto; text-align: center !important; display: flex !important; justify-content: center !important; align-items: flex-start !important; max-width: 660.4px !important; width: 100% !important; align-self: start !important; height: auto !important;"><a href="https://wa.me/972533360976" class="btn btn-primary" style="text-decoration: none; padding: 12px 24px; border-radius: 6px; display: inline-block; border-style: solid; border-width: 2px; border-image: initial; outline: none; border-color: rgb(85, 102, 64) !important; color: rgb(255, 255, 255) !important; flex: 0 0 auto !important; background-color: rgb(85, 102, 64) !important; background-image: none !important;" data-element-type="button" data-text-color="auto" data-element-id="btn-1773356537038-f00h2sdvs" id="btn-1773356537038-f00h2sdvs" target="_blank" rel="noopener noreferrer">צריכים עזרה עכשיו? זמין לכם בוואסטאפ</a></div></section>
 
 
 
 <section class="war-terror-damage-faq-faq-section" data-layout-spec="שאלות ותשובות – נזקי מלחמה וטרור-faq" id="zappy-section-2">
   <div class="war-terror-damage-faq-container">
     <header class="war-terror-damage-faq-header">
-      <h2 style>שאלות נפוצות – נזקי מלחמה וטרור לדירות מגורים</h2>
+      <h2 >שאלות נפוצות – נזקי מלחמה וטרור לדירות מגורים</h2>
       <p>המידע המוצג כאן הוא כללי ונועד לסייע בהבנה ראשונית. כל מקרה הוא ייחודי, ולכן מומלץ להתייעץ ולקבל ליווי מקצועי מותאם אישית לנסיבות שלך.</p>
     </header>
 
-    <div class="war-terror-damage-faq-list zappy-vertical-grid zappy-preserve-css-grid" id="zappy-drop-8c58eyxpl" style="; grid-template-columns: repeat(9, minmax(0, 1fr));" data-zappy-explicit-columns="true" data-zappy-auto-grid="true" data-original-item-width="473" data-original-gap="14px"><div class="war-terror-damage-faq-item" id="zappy-drop-cgwx65r6d">
+    <div class="war-terror-damage-faq-list zappy-preserve-css-grid" id="zappy-drop-8c58eyxpl" style="--zappy-grid-cols: repeat(9, minmax(0, 1fr)); ; grid-template-columns: repeat(9, minmax(0, 1fr));" data-zappy-explicit-columns="true" data-zappy-auto-grid="true" data-original-item-width="473" data-original-gap="14px"><div class="war-terror-damage-faq-item" id="zappy-drop-cgwx65r6d">
         <div class="war-terror-damage-faq-question" id="zappy-drop-7x6paimoj">
-          <h3 class id="zappy-drop-un0wxf8fr">האם ביטוח דירה רגיל מכסה נזקי מלחמה וטרור?</h3>
+          <h3 class="" id="zappy-drop-un0wxf8fr">האם ביטוח דירה רגיל מכסה נזקי מלחמה וטרור?</h3>
           <span class="war-terror-damage-faq-icon" aria-hidden="true">✓</span>
         </div>
         <div class="war-terror-damage-faq-answer" id="zappy-drop-br9lgqlce">
-          <p class id="zappy-drop-g8f1np0b0" style>ברוב המקרים, ביטוח דירה סטנדרטי&amp;nbsp;&amp;nbsp;<u>אינו</u>&amp;nbsp;&amp;nbsp;כולל כיסוי לנזקי מלחמה וטרור כחלק מהפוליסה הבסיסית. הפיצוי בגין הנזק שנגרם הינו באחריות המדינה באמצעות קרן הפיצויים של מס רכוש.</p>
+          <p class="" id="zappy-drop-g8f1np0b0" >ברוב המקרים, ביטוח דירה סטנדרטי&nbsp;&nbsp;<u>אינו</u>&nbsp;&nbsp;כולל כיסוי לנזקי מלחמה וטרור כחלק מהפוליסה הבסיסית. הפיצוי בגין הנזק שנגרם הינו באחריות המדינה באמצעות קרן הפיצויים של מס רכוש.</p>
         </div>
       </div><div class="war-terror-damage-faq-item" id="zappy-drop-i9kkx5k6f">
         <div class="war-terror-damage-faq-question" id="zappy-drop-agm7ux6m0">
-          <h3 class id="zappy-drop-22g19eatc">מה עושים מיד אחרי אירוע נזק?</h3>
+          <h3 class="" id="zappy-drop-22g19eatc">מה עושים מיד אחרי אירוע נזק?</h3>
           <span class="war-terror-damage-faq-icon" aria-hidden="true">✓</span>
         </div>
         <div class="war-terror-damage-faq-answer" id="zappy-drop-q9hj9x5a7">
-          <p class id="zappy-drop-vxny1hbvt" style>ראשית, דאגו לבטיחות האישית והמשפחתית. השמעו להנחיות גורמי ההצלה ונציגי פיקוד העורף שיגיעו. לאחר מכן, במידת האפשר, תעדו את הנזק בתמונות ובסרטונים.<br><br>
+          <p class="" id="zappy-drop-vxny1hbvt" >ראשית, דאגו לבטיחות האישית והמשפחתית. השמעו להנחיות גורמי ההצלה ונציגי פיקוד העורף שיגיעו. לאחר מכן, במידת האפשר, תעדו את הנזק בתמונות ובסרטונים.<br><br>
 
 אם נדרש מכן להתפנות מהבית, קחו איתכם מסמכים חשובים, כסף מזומן ותכשיטים שממילא לא ניתן עבורם פיצוי.<br><br>המתינו לנציגי קרן הפיצויים של מס רכוש שמגיעים בסמוך לאירוע לקבלת הסבר על אופן פתיחת התביעה.<br><br>שמאי מטעם קרן הפיצויים של מס רכוש יגיע בהקדם להערכת היקף וגובה הנזק, בדרך כלל עד 48 שעות מהאירוע.<br><br>חשוב - על מנת לייעל את התהליך, אין צורך לחכות לשמאי לצורך הגשת התביעה. הגישו את התביעה מוקדם ככל האפשר עוד לפני הגעת השמאי. ללא תביעה, לא יוכל השמאי להגיש את חוות דעתו ולכן הפיצוי שלך יתעכב.</p>
         </div>
       </div><div class="war-terror-damage-faq-item" id="zappy-drop-8vjv2tk6c">
         <div class="war-terror-damage-faq-question" id="zappy-drop-9sq7i8oeh">
-          <h3 class id="zappy-drop-pjq259y57" style>מה&amp;nbsp;&amp;nbsp;<u>לא</u>&amp;nbsp; לעשות?</h3>
-          <p class id="zappy-drop-ifqnfool9"><span class="war-terror-damage-faq-icon" aria-hidden="true">✓</span>
+          <h3 class="" id="zappy-drop-pjq259y57" >מה&nbsp;&nbsp;<u>לא</u>&nbsp; לעשות?</h3>
+          <p class="" id="zappy-drop-ifqnfool9"><span class="war-terror-damage-faq-icon" aria-hidden="true">✓</span>
         </p></div>
         <div class="war-terror-damage-faq-answer" id="zappy-drop-10jb4f87w">
-          <p class id="zappy-drop-2vuj8s5qj" style>
+          <p class="" id="zappy-drop-2vuj8s5qj" >
 
-חשוב - אין לפנות ציוד, פסולת או כל חפץ שנמצא בבית לפני הגעת שמאי.&amp;nbsp;<br><br>אין לבצע כל תיקון לפני הגעת שמאי מטעם קרן הפיצויים.</p>
+חשוב - אין לפנות ציוד, פסולת או כל חפץ שנמצא בבית לפני הגעת שמאי.&nbsp;<br><br>אין לבצע כל תיקון לפני הגעת שמאי מטעם קרן הפיצויים.</p>
         </div>
       </div><div class="war-terror-damage-faq-item" id="zappy-drop-gxy2267ka">
         <div class="war-terror-damage-faq-question" id="zappy-drop-kj6r97crs">
-          <h3 class id="zappy-drop-zpat4yi2o" style>מסלולי התביעה</h3>
-          <p class id="zappy-drop-lgyus4mkl"><span class="war-terror-damage-faq-icon" aria-hidden="true">✓</span>
+          <h3 class="" id="zappy-drop-zpat4yi2o" >מסלולי התביעה</h3>
+          <p class="" id="zappy-drop-lgyus4mkl"><span class="war-terror-damage-faq-icon" aria-hidden="true">✓</span>
         </p></div>
         <div class="war-terror-damage-faq-answer" id="zappy-drop-exmi25i97">
-          <p class id="zappy-drop-d93hrwkyn" style>המסלול הרגיל מיועד לתביעות מבנה, תכולה ורכב.<br><br>במסגרת "עם כלביא" ו"שאגת הארי" רשות המיסים פתחה גם מסלול מהיר לתביעות של עד 30 אלף ש"ח לתביעות מבנה ותכולה בלבד. במסלול זה&amp;nbsp;
+          <p class="" id="zappy-drop-d93hrwkyn" >המסלול הרגיל מיועד לתביעות מבנה, תכולה ורכב.<br><br>במסגרת "עם כלביא" ו"שאגת הארי" רשות המיסים פתחה גם מסלול מהיר לתביעות של עד 30 אלף ש"ח לתביעות מבנה ותכולה בלבד. במסלול זה&nbsp;
 
-אין צורך להמתין לביקור שמאי במקום והפיצויים ישולמו תוך שבוע מיום הגשת התביעה במלואה (<a href="https://www.gov.il/he/service/online-direct-damage-claim" target="_blank" rel="noopener noreferrer" style="color: rgb(198, 90, 61); text-decoration: underline; cursor: pointer;" class id="zappy-drop-kdzgkrwzx" data-original-href="https://www.gov.il/he/service/online-direct-damage-claim">קישור להגשת תביעה באתר רשות המיסים</a>).</p>
+אין צורך להמתין לביקור שמאי במקום והפיצויים ישולמו תוך שבוע מיום הגשת התביעה במלואה (<a href="https://www.gov.il/he/service/online-direct-damage-claim" target="_blank" rel="noopener noreferrer" style="color: rgb(198, 90, 61); text-decoration: underline; cursor: pointer;" class="" id="zappy-drop-kdzgkrwzx" data-original-href="https://www.gov.il/he/service/online-direct-damage-claim">קישור להגשת תביעה באתר רשות המיסים</a>).</p>
         </div>
       </div><div class="war-terror-damage-faq-item" id="zappy-drop-odtq7jw2a">
         <div class="war-terror-damage-faq-question" id="zappy-drop-zq1q4lw4a">
-          <h3 class id="zappy-drop-oolr0uo57" style>מה כולל הפיצוי?</h3>
-          <p class id="zappy-drop-pkzkwekv9"><span class="war-terror-damage-faq-icon" aria-hidden="true">✓</span>
+          <h3 class="" id="zappy-drop-oolr0uo57" >מה כולל הפיצוי?</h3>
+          <p class="" id="zappy-drop-pkzkwekv9"><span class="war-terror-damage-faq-icon" aria-hidden="true">✓</span>
         </p></div>
         <div class="war-terror-damage-faq-answer" id="zappy-drop-9klt4qdng">
-          <p class id="zappy-drop-lurifhbh8" style>פיצוי בגין נזקי מבנה - קירות, חלונות, תריסים, מטבח, מזגן מרכזי, צנרת, חשמל וכיו"ב, ניתן על פי הערכת שמאי על פי עקרון "השבה לקדמות".<br><br>פיצוי בגין תכולה ינתן עד לתקרה המוגדרת בתקנות על פי מספר הנפשות הרשומות בכתובת הדירה שניזוקה וסיווגן. 
+          <p class="" id="zappy-drop-lurifhbh8" >פיצוי בגין נזקי מבנה - קירות, חלונות, תריסים, מטבח, מזגן מרכזי, צנרת, חשמל וכיו"ב, ניתן על פי הערכת שמאי על פי עקרון "השבה לקדמות".<br><br>פיצוי בגין תכולה ינתן עד לתקרה המוגדרת בתקנות על פי מספר הנפשות הרשומות בכתובת הדירה שניזוקה וסיווגן. 
 
-בכל מקרה, אין זכאות לפיצויים עבור כסף מזומן, המחאות (צ'קים), תכשיטים, עתיקות וחפצי אומנות שנפגעו באירוע.<br><br>להלן טבלת&amp;nbsp;&amp;nbsp;<u>תקרת הפיצוי המקסימלית</u>&amp;nbsp; הנכונה ל"שאגת הארי":</p><div class="zappy-inserted-element" id="zappy-element-1773354097923-tnppt0gfi" data-element-id="zappy-element-1773354097923-tnppt0gfi" data-element-type="image" data-zappy-newly-inserted="true" data-zappy-media-cell="true" style="max-width: 720px; margin: 20px auto; height: 180px !important; overflow: hidden !important;" data-zappy-original-height="180"><input type="checkbox" id="zappy-lightbox-toggle-zappy-element-1773354097923-tnppt0gfi" class="zappy-lightbox-toggle" data-zappy-image-lightbox="true"><label class="zappy-lightbox-trigger" for="zappy-lightbox-toggle-zappy-element-1773354097923-tnppt0gfi" data-zappy-image-lightbox="true"><div data-zappy-zoom-wrapper="true" data-element-id="zappy-element-1773354097923-tnppt0gfi" data-element-type="image" data-zappy-zoom-wrapper-width="322px" data-zappy-zoom-wrapper-height="181px" data-zappy-zoom-wrapper-width-mode="px" style="position: relative !important; overflow: hidden !important; width: 322px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 181px !important; display: block !important; cursor: pointer;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" data-zappy-click-action="expand" class><img src="/assets/business-general-service-upload-1773354103456.webp" alt="Image" style="border-radius: 8px; object-position: 50% 50%; width: 104.549% !important; height: 100% !important; max-width: none !important; object-fit: fill !important; margin: 0px !important; position: absolute !important; display: block !important; left: -2.27436% !important; top: 0% !important; max-height: none !important;" data-element-type="image" data-element-id="zappy-element-1773354097923-tnppt0gfi" id="zappy-element-1773354097923-tnppt0gfi" class="zappy-editable-image" data-original-position="static" data-zappy-zoom="0.8" data-zappy-original-width="720" data-zappy-original-height="180" data-zappy-click-action="expand"></div></label></div>
+בכל מקרה, אין זכאות לפיצויים עבור כסף מזומן, המחאות (צ'קים), תכשיטים, עתיקות וחפצי אומנות שנפגעו באירוע.<br><br>להלן טבלת&nbsp;&nbsp;<u>תקרת הפיצוי המקסימלית</u>&nbsp; הנכונה ל"שאגת הארי":</p><div class="zappy-inserted-element" id="zappy-element-1773354097923-tnppt0gfi" data-element-id="zappy-element-1773354097923-tnppt0gfi" data-element-type="image" data-zappy-newly-inserted="true" data-zappy-media-cell="true" style="max-width: 720px; margin: 20px auto; height: 180px !important; overflow: hidden !important;" data-zappy-original-height="180"><input type="checkbox" id="zappy-lightbox-toggle-zappy-element-1773354097923-tnppt0gfi" class="zappy-lightbox-toggle" data-zappy-image-lightbox="true"><label class="zappy-lightbox-trigger" for="zappy-lightbox-toggle-zappy-element-1773354097923-tnppt0gfi" data-zappy-image-lightbox="true"><div data-zappy-zoom-wrapper="true" data-element-id="zappy-element-1773354097923-tnppt0gfi" data-element-type="image" data-zappy-zoom-wrapper-width="322px" data-zappy-zoom-wrapper-height="181px" data-zappy-zoom-wrapper-width-mode="px" style="position: relative !important; overflow: hidden !important; width: 322px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 181px !important; display: block !important; cursor: pointer;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true" data-zappy-click-action="expand" class=""><img src="/assets/business-general-service-upload-1773354103456.webp" alt="Image" style="border-radius: 8px; object-position: 50% 50%; width: 104.549% !important; height: 100% !important; max-width: none !important; object-fit: fill !important; margin: 0px !important; position: absolute !important; display: block !important; left: -2.27436% !important; top: 0% !important; max-height: none !important;" data-element-type="image" data-element-id="zappy-element-1773354097923-tnppt0gfi" id="zappy-element-1773354097923-tnppt0gfi" class="zappy-editable-image" data-zappy-zoom="0.8" data-zappy-original-width="720" data-zappy-original-height="180" data-zappy-click-action="expand"></div></label></div>
         </div>
       </div><div class="war-terror-damage-faq-item" id="zappy-drop-hk74xgqy1">
         <div class="war-terror-damage-faq-question" id="zappy-drop-g3tneocyw" aria-expanded="false">
-          <h3 class id="zappy-drop-0de3kg192" style>מה קורה אם אני שוכר את הדירה והיא נפגעה?</h3>
-          <p class id="zappy-drop-01huxzbek"><span class="war-terror-damage-faq-icon" aria-hidden="true">✓</span>
+          <h3 class="" id="zappy-drop-0de3kg192" >מה קורה אם אני שוכר את הדירה והיא נפגעה?</h3>
+          <p class="" id="zappy-drop-01huxzbek"><span class="war-terror-damage-faq-icon" aria-hidden="true">✓</span>
         </p></div>
         <div class="war-terror-damage-faq-answer" id="zappy-drop-c6kix3eeh">
-          <p class id="zappy-drop-r5mowvnxe" style>המבנה הוא בבעלות בעל הדירה - המשכיר. במידה ויש פגיעה במבנה הוא נדרש להגיש תביעה בנושא.&amp;nbsp;<br><br>אם כל התכולה בבעלות השוכר שמתגורר בדירה, הוא נדרש להגיש תביעה בגין התכולה שנפגעה.<br><br>אם חלק מהתכולה שייכת למשכיר, שניהם נדרשים להגיש תביעה, כל אחד על החלק שלו. הפיצוי יהיה בכל מקרה עד לתקרת הפיצוי בטבלה שלעיל.</p>
+          <p class="" id="zappy-drop-r5mowvnxe" >המבנה הוא בבעלות בעל הדירה - המשכיר. במידה ויש פגיעה במבנה הוא נדרש להגיש תביעה בנושא.&nbsp;<br><br>אם כל התכולה בבעלות השוכר שמתגורר בדירה, הוא נדרש להגיש תביעה בגין התכולה שנפגעה.<br><br>אם חלק מהתכולה שייכת למשכיר, שניהם נדרשים להגיש תביעה, כל אחד על החלק שלו. הפיצוי יהיה בכל מקרה עד לתקרת הפיצוי בטבלה שלעיל.</p>
         </div>
       </div><div class="war-terror-damage-faq-item" id="zappy-drop-d994bm2b4">
         <div class="war-terror-damage-faq-question" id="zappy-drop-afsz8midm">
-          <h3 class id="zappy-drop-1upe2v2nx" style>דירת שותפים</h3>
-          <p class id="zappy-drop-nqn3jn1yl"><span class="war-terror-damage-faq-icon" aria-hidden="true">✓</span>
+          <h3 class="" id="zappy-drop-1upe2v2nx" >דירת שותפים</h3>
+          <p class="" id="zappy-drop-nqn3jn1yl"><span class="war-terror-damage-faq-icon" aria-hidden="true">✓</span>
         </p></div>
         <div class="war-terror-damage-faq-answer" id="zappy-drop-lnsyvpgdq">
-          <p class id="zappy-drop-xgs7c90fc" style>כל שותף יגיש תביעה נפרדת על חלקו בתכולה</p>
+          <p class="" id="zappy-drop-xgs7c90fc" >כל שותף יגיש תביעה נפרדת על חלקו בתכולה</p>
         </div>
       </div><div class="war-terror-damage-faq-item" id="zappy-drop-6vn5o6uq8">
         <div class="war-terror-damage-faq-question" id="zappy-drop-pvy1w80yb">
-          <h3 class id="zappy-drop-qykzz024x" style>מהי הזכאות במקרה של גרושים עם ילדים במשמורת משותפת?&amp;nbsp;</h3>
-          <p class id="zappy-drop-fcnue7s6o"><span class="war-terror-damage-faq-icon" aria-hidden="true" style>✓</span>
+          <h3 class="" id="zappy-drop-qykzz024x" >מהי הזכאות במקרה של גרושים עם ילדים במשמורת משותפת?&nbsp;</h3>
+          <p class="" id="zappy-drop-fcnue7s6o"><span class="war-terror-damage-faq-icon" aria-hidden="true" >✓</span>
         </p></div>
         <div class="war-terror-damage-faq-answer" id="zappy-drop-rvu1zdxim">
-          <p class id="zappy-drop-cfat2gmhl" style>גובה הפיצוי יקבע לפי תקרת הורה יחיד ובנוסף מספר הילדים שגרים איתו במשמרות המשותפת.&amp;nbsp;</p>
+          <p class="" id="zappy-drop-cfat2gmhl" >גובה הפיצוי יקבע לפי תקרת הורה יחיד ובנוסף מספר הילדים שגרים איתו במשמרות המשותפת.&nbsp;</p>
         </div>
       </div><div class="war-terror-damage-faq-item" id="zappy-drop-6vn5o6uq8-dup-1773355111967-fyvu1y">
         <div class="war-terror-damage-faq-question" id="zappy-drop-pvy1w80yb-dup-1773355111967-fyvu1y">
-          <h3 class id="zappy-drop-qykzz024x-dup-1773355111967-fyvu1y" style="cursor: text;">האם אני צריך שמאי פרטי במקרה של נזק מלחמה או טרור?</h3>
-          <p class style="cursor: text;" id="zappy-drop-3d14f86fb"><span class="war-terror-damage-faq-icon" aria-hidden="true" style="cursor: text;">✓</span>
+          <h3 class="" id="zappy-drop-qykzz024x-dup-1773355111967-fyvu1y" >האם אני צריך שמאי פרטי במקרה של נזק מלחמה או טרור?</h3>
+          <p class=""  id="zappy-drop-3d14f86fb"><span class="war-terror-damage-faq-icon" aria-hidden="true" >✓</span>
         </p></div>
         <div class="war-terror-damage-faq-answer" id="zappy-drop-rvu1zdxim-dup-1773355111967-fyvu1y">
-          <p class id="zappy-drop-cfat2gmhl-dup-1773355111967-fyvu1y" style="cursor: text;">בשלב הראשוני התשובה היא לא. שמאי קרן הפיצויים של מס רכוש יקבעו את היקף וגובה הנזק והפיצוי ינתן על פיו.<br><br>במידה והפיצוי שקיבלת ממס רכוש לא תואם את התקנות את את הנזק שנגרם פנו אלי לייעוץ. במידה ואמצא שהפיצוי שניתן אכן מקפח אתכם, אדאג לחוות דעת נגדית וייצוג מול מס רכוש.</p>
+          <p class="" id="zappy-drop-cfat2gmhl-dup-1773355111967-fyvu1y" >בשלב הראשוני התשובה היא לא. שמאי קרן הפיצויים של מס רכוש יקבעו את היקף וגובה הנזק והפיצוי ינתן על פיו.<br><br>במידה והפיצוי שקיבלת ממס רכוש לא תואם את התקנות את את הנזק שנגרם פנו אלי לייעוץ. במידה ואמצא שהפיצוי שניתן אכן מקפח אתכם, אדאג לחוות דעת נגדית וייצוג מול מס רכוש.</p>
         </div>
       </div><div class="war-terror-damage-faq-callout" id="zappy-drop-8u4ljlw4y">
-        <h3 class id="zappy-drop-6k9spjnmb" style>עדיין לא בטוחים איך להתקדם? יש לכם שאלה שלא ניתנה עליה תשובה</h3>
-        <p class id="zappy-drop-0j529gebd" style="text-align: right">אני כאן כדי לעזור. פנו אלי לייעוץ ראשוני וקבלו תשובות מותאמות אישית למצב שלכם. אין צורך להתמודד עם זה לבד.</p>
-        <p class id="zappy-drop-1rbwnox6u"><a href="/contact" class="war-terror-damage-faq-cta btn-secondary" data-element-type="button" data-element-id="btn-1773349529895-juot85qy4" data-native-element="true" id="zappy-drop-88b0h099h" data-original-href="/contact">צרו קשר עכשיו</a>
+        <h3 class="" id="zappy-drop-6k9spjnmb" >עדיין לא בטוחים איך להתקדם? יש לכם שאלה שלא ניתנה עליה תשובה</h3>
+        <p class="" id="zappy-drop-0j529gebd" style="text-align: right">אני כאן כדי לעזור. פנו אלי לייעוץ ראשוני וקבלו תשובות מותאמות אישית למצב שלכם. אין צורך להתמודד עם זה לבד.</p>
+        <p class="" id="zappy-drop-1rbwnox6u"><a href="/contact" class="war-terror-damage-faq-cta btn-secondary" data-element-type="button" data-element-id="btn-1773349529895-juot85qy4" data-native-element="true" id="zappy-drop-88b0h099h" data-original-href="/contact">צרו קשר עכשיו</a>
       </p></div></div>
   </div>
 </section>
@@ -2517,7 +2555,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
       <a href="/contact" class="war-terror-damage-faq-cta-btn-primary">צרו קשר עכשיו</a>
       <button class="war-terror-damage-faq-cta-btn-secondary" onclick="window.location.href='/contact'">רק לשאול שאלה</button>
     </div>
-    <p class="war-terror-damage-faq-cta-microcopy">אני מבין את המורכבות - תקבלו תשובות ברורות וסבלניות&amp;nbsp;</p>
+    <p class="war-terror-damage-faq-cta-microcopy">אני מבין את המורכבות - תקבלו תשובות ברורות וסבלניות&nbsp;</p>
   </div>
 </section></main>
   
@@ -2533,8 +2571,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
   <div class="footer-container">
     <div class="footer-grid">
       <div class="footer-column footer-about">
-        <img src="/assets/logo-1771227590110-o4kwna.webp?v=1771227591052-cr0ti0" alt="ירון חזן - שמאי רכוש" class="logo">
-        <p class="footer-description">שמאות רכוש מקצועית ואמינה. מומחה לתביעות ביטוח ושמאות נדל"ן.</p>
+        <img src="/assets/logo-1771227590110-o4kwna.webp?v=1771227591052-cr0ti0" alt="ירון חזן - שמאי רכוש" class="logo" data-element-type="image" data-element-id="img-1781700718843-zrkx5u1v3" data-zappy-footer-image="true">
+        <p class="footer-description" >שמאות רכוש מקצועית ואמינה. חבר באיגוד השמאים</p>
       </div>
       
       <div class="footer-column footer-links">
@@ -2550,14 +2588,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
         <h3 class="footer-title">יצירת קשר</h3>
         <ul class="contact-list">
           <li>
-            <i class="fas fa-envelope"></i>
+            <i class="fas fa-envelope" data-element-type="icon" data-element-id="icon-1781700718842-hc83k5161" data-icon-type="fontawesome"></i>
             <a href="mailto:ya1hazan@gmail.com">ya1hazan@gmail.com</a>
           </li>
           <li>
-            <i class="fas fa-phone"></i>
+            <i class="fas fa-phone" data-element-type="icon" data-element-id="icon-1781700718842-tytp0jzwr" data-icon-type="fontawesome"></i>
             <a href="tel:053-3360976">053-3360976</a>
           </li>
-          <li><a href="/"><i class="fas fa-map-marker-alt"></i>
+          <li><a href="/"><i class="fas fa-map-marker-alt" data-element-type="icon" data-element-id="icon-1781700718842-2hgg3tgws" data-icon-type="fontawesome"></i>
             <span>כפר סבא, ישראל</span></a></li>
         </ul>
       </div>
@@ -2569,13 +2607,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
             <i class="fab fa-facebook-f"></i>
           </a>
           <a href="https://instagram.com/yaron1hazan" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-instagram"></i>
+            <i class="fab fa-instagram" data-element-type="icon" data-element-id="icon-1781700718842-wnbahbupq" data-icon-type="fontawesome"></i>
           </a>
           <a href="https://wa.me/972533360976" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-whatsapp"></i>
+            <i class="fab fa-whatsapp" data-element-type="icon" data-element-id="icon-1781700718842-yhlppo0ad" data-icon-type="fontawesome"></i>
           </a>
           <a href="https://linkedin.com/company/%D7%99%D7%A8%D7%95%D7%9F-%D7%97%D7%96%D7%9F-%D7%A9%D7%9E%D7%90%D7%99-%D7%A8%D7%9B%D7%95%D7%A9" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" data-element-id="element-ai-1773232514407-ln8k2m" data-element-type="social-link">
-            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-linkedin" data-element-type="icon" data-element-id="icon-1781700718842-oikgr1tfu" data-icon-type="fontawesome"></i>
           </a>
         </div>
       </div>
@@ -2662,29 +2700,143 @@ j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
 
     <script>
     (function(){
-      if(window.innerWidth>768)return;
-      function fixZW(){
+      var _applied=false;
+      function _isHeroBg(w){var img=w.querySelector('img');if(img&&(img.getAttribute('data-hero-bg')==='true'||img.getAttribute('data-hero-background')==='true'))return true;var p=(w.style.position||'').replace(/\s*!important\s*/g,'').trim();var ww=(w.style.width||'').replace(/\s*!important\s*/g,'').trim();var hh=(w.style.height||'').replace(/\s*!important\s*/g,'').trim();return p==='absolute'&&ww==='100%'&&hh==='100%';}
+      function fixDesktopWrappers(){
+        // No-op: desktop wrapper restoration is handled by ZAPPY_PUBLISHED_ZOOM_WRAPPER_RUNTIME
+        // in script.js (restoreWrapperDimensions). The old inflation logic here was expanding
+        // small wrappers (e.g. 139px logo wrappers) to their parent width, conflicting with
+        // the correct stored dimensions.
+      }
+      function _parsePos(s){var x=50,y=50;try{var m=(s||'').match(/(-?d+(?:.d+)?)%s+(-?d+(?:.d+)?)%/);if(m){x=parseFloat(m[1]);y=parseFloat(m[2]);}}catch(e){}if(!isFinite(x))x=50;if(!isFinite(y))y=50;return{x:Math.max(0,Math.min(100,x)),y:Math.max(0,Math.min(100,y))};}
+      function _coverPct(iA,cA){if(!isFinite(iA)||iA<=0||!isFinite(cA)||cA<=0)return{w:100,h:100};if(iA>=cA)return{w:(iA/cA)*100,h:100};return{w:100,h:(cA/iA)*100};}
+      function applyMobile(){
+        if(_applied)return;_applied=true;
         document.querySelectorAll('[data-zappy-zoom-wrapper="true"]').forEach(function(w){
+          if(_isHeroBg(w))return;
           var cw=w.style.getPropertyValue('width');
-          if(!cw||cw==='100%')return;
-          w.style.setProperty('width','100%','important');
-          w.style.setProperty('max-width','100%','important');
-          w.style.setProperty('height','auto','important');
+          var _sW=parseFloat(w.getAttribute('data-zappy-zoom-wrapper-width'))||0;
+          var _sH=parseFloat(w.getAttribute('data-zappy-zoom-wrapper-height'))||0;
+          if(!cw&&!(_sW>0&&_sH>0))return;
+          if(!w._zappyDesktop)w._zappyDesktop={wStyle:w.getAttribute('style')};
           var img=w.querySelector('img');
-          if(img){
+          if(!img)return;
+          if(!img._zappyDesktop)img._zappyDesktop={src:img.getAttribute('src'),style:img.getAttribute('style')};
+          var mobileZoomStr=img.getAttribute('data-zappy-mobile-zoom');
+          var mobileZoom=parseFloat(mobileZoomStr);
+          var mobileSrc=img.getAttribute('data-zappy-mobile-src');
+          var mobilePos=img.getAttribute('data-zappy-mobile-object-position');
+          var parentOvf=w.parentElement?((w.parentElement.style.overflow||'')+(window.getComputedStyle(w.parentElement).overflow||'')).trim():'';
+          var inConstrainedParent=parentOvf.indexOf('hidden')!==-1||parentOvf.indexOf('clip')!==-1;
+          if(inConstrainedParent){
+            w.style.setProperty('max-width','100%','important');
+          }else{
+            w.style.setProperty('width','100%','important');
+            w.style.setProperty('max-width','100%','important');
+          }
+          if(mobileSrc)img.src=mobileSrc;
+          function _applyZoomCrop(_img,_w,_ePos,_eZoom){
+            var rect=_w.getBoundingClientRect();
+            if(!rect||!rect.width||!rect.height)return;
+            var nW=_img.naturalWidth||0,nH=_img.naturalHeight||0;
+            if(!(nW>0&&nH>0))return;
+            var iA=nW/nH,cA=rect.width/rect.height;
+            var cv=_coverPct(iA,cA);
+            var wP=100,hP=100;
+            if(_eZoom>=1){wP=cv.w*_eZoom;hP=cv.h*_eZoom;}
+            else{var t2=(_eZoom-0.5)/0.5;if(!isFinite(t2))t2=0;t2=Math.max(0,Math.min(1,t2));wP=100+t2*(cv.w-100);hP=100+t2*(cv.h-100);}
+            var p2=_parsePos(_ePos);
+            var lP=(100-wP)*(p2.x/100);
+            var tP=(100-hP)*(p2.y/100);
+            _img.style.setProperty('position','absolute','important');
+            _img.style.setProperty('left',lP+'%','important');
+            _img.style.setProperty('top',tP+'%','important');
+            _img.style.setProperty('width',wP+'%','important');
+            _img.style.setProperty('height',hP+'%','important');
+            _img.style.setProperty('max-width','none','important');
+            _img.style.setProperty('max-height','none','important');
+            _img.style.setProperty('display','block','important');
+            _img.style.setProperty('object-fit',_eZoom<1?'fill':'cover','important');
+            _img.style.setProperty('transform','none','important');
+            _img.style.setProperty('margin','0','important');
+          }
+          if(_sW>0&&_sH>0){
+            var effZoom=(isFinite(mobileZoom)&&mobileZoom>0)?mobileZoom:(parseFloat(img.getAttribute('data-zappy-zoom'))||1);
+            var effPos=mobilePos||img.getAttribute('data-zappy-object-position')||img.style.objectPosition||'50% 50%';
+            w.style.setProperty('overflow','hidden','important');
+            w.style.setProperty('position','relative','important');
+            w.style.setProperty('width','100%','important');
+            w.style.setProperty('max-width','100%','important');
+            if(_sW>0&&_sH>0){w.style.setProperty('padding-bottom','0','important');w.style.setProperty('aspect-ratio',_sW+'/'+_sH,'important');w.style.setProperty('height','auto','important');}
+            _applyZoomCrop(img,w,effPos,effZoom);
+            if(!(img.complete&&img.naturalWidth>0)){
+              (function(_i,_w2,_p,_z){_i.addEventListener('load',function _ol(){_i.removeEventListener('load',_ol);try{_applyZoomCrop(_i,_w2,_p,_z);}catch(e){}});
+              })(img,w,effPos,effZoom);
+            }
+          }else{
+            if(!inConstrainedParent)w.style.setProperty('height','auto','important');
             img.style.setProperty('position','relative','important');
             img.style.setProperty('width','100%','important');
             img.style.setProperty('height','auto','important');
             img.style.setProperty('max-width','100%','important');
-            img.style.setProperty('max-height','400px','important');
+            img.style.setProperty('max-height',inConstrainedParent?'none':'400px','important');
             img.style.setProperty('object-fit','cover','important');
             img.style.setProperty('left','0','important');
             img.style.setProperty('top','0','important');
+            img.style.setProperty('transform','none','important');
+          }
+        });
+        document.querySelectorAll('img[data-zappy-mobile-src],img[data-zappy-mobile-object-position],img[data-zappy-mobile-zoom]').forEach(function(img){
+          var zw=img.closest('[data-zappy-zoom-wrapper="true"]');
+          if(zw&&!_isHeroBg(zw))return;
+          if(!img._zappyDesktop)img._zappyDesktop={src:img.getAttribute('src'),style:img.getAttribute('style')};
+          var mobileSrc=img.getAttribute('data-zappy-mobile-src');
+          var mobilePos=img.getAttribute('data-zappy-mobile-object-position');
+          var mobileZoom=parseFloat(img.getAttribute('data-zappy-mobile-zoom'));
+          if(mobileSrc)img.src=mobileSrc;
+          if(mobilePos)img.style.setProperty('object-position',mobilePos,'important');
+          if(mobileZoom>1){
+            img.style.setProperty('transform','scale('+mobileZoom+')','important');
+            img.style.setProperty('transform-origin',mobilePos||'50% 50%','important');
+            var p=img.parentElement;
+            if(p)p.style.setProperty('overflow','hidden','important');
           }
         });
       }
-      if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',fixZW);
-      else setTimeout(fixZW,50);
+      function revertDesktop(){
+        if(!_applied)return;_applied=false;
+        document.querySelectorAll('[data-zappy-zoom-wrapper="true"]').forEach(function(w){
+          if(w._zappyDesktop&&w._zappyDesktop.wStyle!=null){w.setAttribute('style',w._zappyDesktop.wStyle);}
+          var img=w.querySelector('img');
+          if(img&&img._zappyDesktop){
+            if(img._zappyDesktop.src!=null)img.setAttribute('src',img._zappyDesktop.src);
+            if(img._zappyDesktop.style!=null)img.setAttribute('style',img._zappyDesktop.style);
+            else img.removeAttribute('style');
+          }
+        });
+        document.querySelectorAll('img[data-zappy-mobile-src],img[data-zappy-mobile-object-position],img[data-zappy-mobile-zoom]').forEach(function(img){
+          var zw=img.closest('[data-zappy-zoom-wrapper="true"]');
+          if(zw&&!_isHeroBg(zw))return;
+          if(img._zappyDesktop){
+            if(img._zappyDesktop.src!=null)img.setAttribute('src',img._zappyDesktop.src);
+            if(img._zappyDesktop.style!=null)img.setAttribute('style',img._zappyDesktop.style);
+            else img.removeAttribute('style');
+          }
+        });
+        _fixHeroBgWrappers();
+        fixDesktopWrappers();
+      }
+      function _fixHeroBgWrappers(){var isMob=window.innerWidth<=768;document.querySelectorAll('[data-zappy-zoom-wrapper="true"]').forEach(function(w){if(!_isHeroBg(w))return;w.style.setProperty('position','absolute','important');w.style.setProperty('top','0','important');w.style.setProperty('left','0','important');w.style.setProperty('width','100%','important');w.style.setProperty('height','100%','important');w.style.setProperty('max-width','none','important');w.style.setProperty('overflow','hidden','important');w.setAttribute('data-zappy-zoom-wrapper-width-mode','full');var img=w.querySelector('img');if(img){img.style.setProperty('width','100%','important');img.style.setProperty('height','100%','important');img.style.setProperty('object-fit','cover','important');img.style.setProperty('position','relative','important');img.style.setProperty('top','0','important');img.style.setProperty('left','0','important');img.style.setProperty('max-width','none','important');img.style.setProperty('max-height','none','important');img.style.setProperty('display','block','important');if(isMob){var mSrc=img.getAttribute('data-zappy-mobile-src');var mPos=img.getAttribute('data-zappy-mobile-object-position');var mZoom=parseFloat(img.getAttribute('data-zappy-mobile-zoom'));if(mSrc){if(!img._zappyDesktop)img._zappyDesktop={src:img.getAttribute('src'),style:img.getAttribute('style')};img.src=mSrc;}if(mPos)img.style.setProperty('object-position',mPos,'important');if(mZoom>1){img.style.setProperty('transform','scale('+mZoom+')','important');img.style.setProperty('transform-origin',mPos||'50% 50%','important');}}}});}
+      function init(){
+        _fixHeroBgWrappers();
+        var mq=window.matchMedia('(max-width:768px)');
+        function onChange(e){if(e.matches)applyMobile();else revertDesktop();}
+        if(mq.matches)applyMobile();
+        else fixDesktopWrappers();
+        try{mq.addEventListener('change',onChange);}catch(e){mq.addListener(onChange);}
+      }
+      if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
+      else setTimeout(init,50);
     })();
     </script>
 </body>
