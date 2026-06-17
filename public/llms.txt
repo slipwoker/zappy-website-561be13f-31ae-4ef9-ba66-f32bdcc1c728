@@ -1,4 +1,6 @@
-# Business — Generative Engine Optimization Map
+# ירון חזן - שמאי רכוש — Generative Engine Optimization Map
+
+> A ביטוח ושמאות business.
 
 ---
 
@@ -40,12 +42,42 @@ Information about WCAG compliance and accessibility features.
 
 ---
 
-# Business Context (for LLM understanding)
+## How to Contact Us
 
-## About Business
+- Email: ya1hazan@gmail.com
+- Phone: 053-3360976
+- Phone (tel): tel:0533360976
+- Address: כפר סבא,, כפר סבא
+
+### Contact form
+- URL: https://shamayh.co.il/contact
+- Endpoint: https://shamayh.co.il/api/email/contact-form
+- Method: POST
+- Content-Type: application/json
+- Fields:
+  - `name` (text)
+  - `email` (email)
+  - `phone` (tel)
+  - `message` (textarea)
+  - `privacy_consent` (checkbox, required)
+
 ---
 
-# Additional Resources
+# Business Context (for LLM understanding)
 
-- **Sitemap**: https://shamayh.co.il/sitemap.xml
-- **Robots.txt**: https://shamayh.co.il/robots.txt
+## About ירון חזן - שמאי רכוש
+ירון חזן - שמאי רכוש is a business in the ביטוח ושמאות industry.
+
+## Target Audience
+אנשים עם נזק בדירה או בעסק מנזק מים/רטיבות, שריפה או פריצה
+
+## Industry
+ביטוח ושמאות
+
+---
+
+# Machine-readable feeds
+
+- Sitemap (XML): https://shamayh.co.il/sitemap.xml
+- Robots: https://shamayh.co.il/robots.txt
+- Flattened page text (for LLMs): https://shamayh.co.il/llms-full.txt
